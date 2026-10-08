@@ -1,38 +1,42 @@
 package bookshelf.example.demo;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
 public class Book {
-    public int getBookid() {
-        return Bookid;
-    }
-
-    public void setBookid(int bookid) {
-        Bookid = bookid;
-    }
-
     @Id
-    private int Bookid;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int bookId;
+    private String bookName;
+    private String bookInfo;
+    public Book(){
 
-    public String getBookname() {
-        return Bookname;
     }
 
-    public void setBookname(String bookname) {
-        Bookname = bookname;
+    public int getBookId() {
+        return bookId;
     }
 
-    private String Bookname;
-
-    public String getBookinfo() {
-        return Bookinfo;
+    public void setBookId(int bookId) {
+       this.bookId = bookId;
     }
 
-    public void setBookinfo(String bookinfo) {
-        Bookinfo = bookinfo;
+    public String getBookName() {
+        return bookName;
     }
 
-    private String Bookinfo;
+    public void setBookName(String bookName) {
+      this.bookName = bookName;
+    }
+
+    public String getBookInfo() {
+        return bookInfo;
+    }
+
+    public void setBookInfo(String bookInfo) {
+       this.bookInfo = bookInfo;
+    }
 }
